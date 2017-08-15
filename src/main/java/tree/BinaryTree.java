@@ -84,6 +84,22 @@ public class BinaryTree<T extends Comparable> {
 	}
 
 
+    /**
+     * 根据 BST 特性找到给定的元素
+     * @param root
+     */
+	public int find(Node<T> root,T data){
+	    if(null == root)return -1;
+	    if(root.getData().compareTo(data) > 0){
+            return find(root.getLeftNode(),data);
+        }else if(root.getData().compareTo(data) < 0){
+           return  find(root.getRightNode(), data);
+        }else{
+	        return 1;
+        }
+    }
+
+
 	/**
 	 * 树的节点
 	 * @param <T>

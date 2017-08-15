@@ -46,4 +46,10 @@ public class BinaryTreeTest {
 		System.out.println("\n后序遍历结束");
 	}
 
+	@Test
+	public void findTest(){
+        int result = binaryTree.find(root, -9);
+        System.out.println(result);
+    }
+
 }
