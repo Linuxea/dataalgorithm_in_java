@@ -1,11 +1,8 @@
 package tree;
 
-import com.google.common.collect.Lists;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
-import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * Created by Linuxea on 2017-08-15.
@@ -51,8 +48,41 @@ public class BinaryTree<T extends Comparable> {
 				nodeList.add(theFirst.getRightNode());
 			}
 		}
-
 	}
+
+	/**
+	 * 先序遍历
+	 * @param root
+	 */
+	public void prePrint(Node<T> root){
+		if(null == root)return;
+		System.out.print(root.getData() + " => ");
+		prePrint(root.getLeftNode());
+		prePrint(root.getRightNode());
+	}
+
+	/**
+	 * 中序遍历
+	 * @param root
+	 */
+	public void middlePrint(Node<T> root){
+		if(null == root)return;
+		middlePrint(root.getLeftNode());
+		System.out.print(root.getData() + " => ");
+		middlePrint(root.getRightNode());
+	}
+
+	/**
+	 * 后序遍历
+	 * @param root
+	 */
+	public void afterPrint(Node<T> root){
+		if(null == root)return;
+		afterPrint(root.getLeftNode());
+		afterPrint(root.getRightNode());
+		System.out.print(root.getData() + " => ");
+	}
+
 
 	/**
 	 * 树的节点
