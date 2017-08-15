@@ -39,7 +39,7 @@ public class BinaryTree<T extends Comparable> {
 	 * 从根结点开始
 	 * @param root
 	 */
-	public void print(Node<T> root){
+	public void levelPrint(Node<T> root){
 		Queue<Node<T>> nodeList = new LinkedList<>();
 		nodeList.add(root);
 		while (true){
