@@ -17,20 +17,14 @@ public class BinaryTree<T extends Comparable> {
      */
     public BinaryTree put(BinaryTree root,T t){
         if(null == root){
-            root = new BinaryTree(leftTree, rightTree, t);
+            return root = new BinaryTree(t);
         }else{
-            if(root.getData().compareTo(t)>0){
-                root.setLeftTree(new BinaryTree());
-                put(root.getLeftTree(), t);
-            }else if(root.getData().compareTo(t) == 0){
-               //pass
+            if(root.getData().compareTo(t)>=0){
+                return put(root.getLeftTree(), t);
             }else{
-                root.setRightTree(new BinaryTree());
-                put(root.getRightTree(), t);
+                return put(root.getRightTree(), t);
             }
         }
-
-        return root;
     }
 
 
