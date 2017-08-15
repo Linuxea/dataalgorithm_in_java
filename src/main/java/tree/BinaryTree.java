@@ -6,76 +6,91 @@ package tree;
  */
 public class BinaryTree<T extends Comparable> {
 
-    private BinaryTree leftTree;
-    private BinaryTree rightTree;
-    private T data;
+	private Node<T> root; //根节点
 
-    /**
-     * 存储
-     * 返回根结点
-     * @param t
-     */
-    public BinaryTree put(BinaryTree root,T t){
-        if(null == root){
-            return root = new BinaryTree(t);
-        }else{
-            if(root.getData().compareTo(t)>=0){
-                return put(root.getLeftTree(), t);
-            }else{
-                return put(root.getRightTree(), t);
-            }
-        }
-    }
+	public BinaryTree() {
+	}
 
+	public BinaryTree(Node<T> root) {
+		this.root = root;
+	}
 
+	/**
+	 * 放
+	 * @param root
+	 * @param t
+	 */
+	public Node put(Node<T> root, T t){
+		if(null == root){ //根节点为空
+			root = new Node<>(t);
+		}else{
+			if(root.getData().compareTo(t)>=0){
+				put(root.getLeftNode(), t);
+			}else{
+				put(root.getRightNode(), t);
+			}
+		}
 
+		return root;
+	}
 
-    public BinaryTree getLeftTree() {
-        return leftTree;
-    }
+	@Override
+	public String toString() {
+		return "BinaryTree{" +
+				"root=" + root +
+				'}';
+	}
 
-    public void setLeftTree(BinaryTree leftTree) {
-        this.leftTree = leftTree;
-    }
+	/**
+	 * 树的节点
+	 * @param <T>
+	 */
+	public static class Node<T>{
+		Node<T> leftNode;
+		Node<T> rightNode;
+		T data;
 
-    public BinaryTree getRightTree() {
-        return rightTree;
-    }
+		public Node(T data) {
+			this.data = data;
+		}
 
-    public void setRightTree(BinaryTree rightTree) {
-        this.rightTree = rightTree;
-    }
+		public Node(Node<T> leftNode, Node<T> rightNode, T data) {
+			this.leftNode = leftNode;
+			this.rightNode = rightNode;
+			this.data = data;
+		}
 
-    public T getData() {
-        return data;
-    }
+		public Node<T> getLeftNode() {
+			return leftNode;
+		}
 
-    public void setData(T data) {
-        this.data = data;
-    }
+		public void setLeftNode(Node<T> leftNode) {
+			this.leftNode = leftNode;
+		}
 
-    public BinaryTree(T data) {
-        this.data = data;
-    }
+		public Node<T> getRightNode() {
+			return rightNode;
+		}
 
+		public void setRightNode(Node<T> rightNode) {
+			this.rightNode = rightNode;
+		}
 
-    public BinaryTree() {
-    }
+		public T getData() {
+			return data;
+		}
 
-    public BinaryTree(BinaryTree leftTree, BinaryTree rightTree, T data) {
-        this.leftTree = leftTree;
-        this.rightTree = rightTree;
-        this.data = data;
-    }
+		public void setData(T data) {
+			this.data = data;
+		}
 
-
-
-    @Override
-    public String toString() {
-        return "BinaryTree{" +
-                "leftTree=" + leftTree +
-                ", rightTree=" + rightTree +
-                ", data=" + data +
-                '}';
-    }
+		@Override
+		public String toString() {
+			return "Node{" +
+					"leftNode=" + leftNode +
+					", rightNode=" + rightNode +
+					", data=" + data +
+					'}';
+		}
+	}
 }

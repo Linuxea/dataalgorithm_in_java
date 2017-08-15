@@ -9,11 +9,12 @@ public class BinaryTreeTest {
 
     @Test
     public void putTest(){
-        BinaryTree<Integer> integerBinaryTree = new BinaryTree<>();
-        BinaryTree root = integerBinaryTree.put(null,1);
-        integerBinaryTree.put(root,2);
-        integerBinaryTree.put(root,3);
-        integerBinaryTree.put(root,-1);
+		BinaryTree<Integer> binaryTree = new BinaryTree<>();
+		BinaryTree. Node root = binaryTree.put(null, 1);
+		binaryTree.put(root, 2);
+		binaryTree.put(root, 3);
+		binaryTree.put(root, -9);
+		System.out.println(binaryTree);
     }
 
 }
