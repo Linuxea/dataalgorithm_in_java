@@ -99,6 +99,32 @@ public class BinaryTree<T extends Comparable> {
         }
     }
 
+    /**
+     * 从根节点找最大的
+     * @param root
+     */
+    public T findMax(Node<T> root){
+        T max = null;
+        while(null != root.getRightNode()){
+            max = root.getRightNode().getData();
+            root = root.getRightNode();
+        }
+        return max;
+    }
+
+    /**
+     * 从根节点找最小的
+     * @param root
+     */
+    public T findMin(Node<T> root){
+        T max = null;
+        while(null != root.getLeftNode()){
+            max = root.getLeftNode().getData();
+            root = root.getLeftNode();
+        }
+        return max;
+    }
+
 
 	/**
 	 * 树的节点

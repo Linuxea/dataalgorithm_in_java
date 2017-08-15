@@ -13,6 +13,7 @@ public class BinaryTreeTest {
 
 	@Before
 	public void before(){
+        binaryTree.put(root,101);
 		binaryTree.put(root, 2);
 		binaryTree.put(root, 3);
 		binaryTree.put(root, -9);
@@ -52,4 +53,15 @@ public class BinaryTreeTest {
         System.out.println(result);
     }
 
+    @Test
+    public void findMaxTest(){
+	    int max = binaryTree.findMax(root);
+	    System.out.println("max:"+ max);
+    }
+
+    @Test
+    public void findMinTest(){
+        int min = binaryTree.findMin(root);
+        System.out.println("min:"+ min);
+    }
 }
