@@ -1,18 +1,16 @@
 package tree;
 
+import com.google.common.collect.Lists;
+
+import java.util.List;
+
 /**
  * Created by Linuxea on 2017-08-15.
  * 二叉树
  */
 public class BinaryTree<T extends Comparable> {
 
-	private Node<T> root; //根节点
-
 	public BinaryTree() {
-	}
-
-	public BinaryTree(Node<T> root) {
-		this.root = root;
 	}
 
 	/**
@@ -25,20 +23,22 @@ public class BinaryTree<T extends Comparable> {
 			root = new Node<>(t);
 		}else{
 			if(root.getData().compareTo(t)>=0){
-				put(root.getLeftNode(), t);
+				root.setLeftNode(put(root.getLeftNode(), t));
 			}else{
-				put(root.getRightNode(), t);
+				root.setRightNode(put(root.getRightNode(), t));
 			}
 		}
 
 		return root;
 	}
 
-	@Override
-	public String toString() {
-		return "BinaryTree{" +
-				"root=" + root +
-				'}';
+	/**
+	 *
+	 * @param root
+	 */
+	public void print(Node<T> root){
+		List<Node<T>> nodeList = Lists.newArrayList();
+		
 	}
 
 	/**
