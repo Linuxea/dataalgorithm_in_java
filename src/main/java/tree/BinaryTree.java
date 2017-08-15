@@ -2,7 +2,10 @@ package tree;
 
 import com.google.common.collect.Lists;
 
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * Created by Linuxea on 2017-08-15.
@@ -33,12 +36,22 @@ public class BinaryTree<T extends Comparable> {
 	}
 
 	/**
-	 *
+	 * 从根结点开始
 	 * @param root
 	 */
 	public void print(Node<T> root){
-		List<Node<T>> nodeList = Lists.newArrayList();
-		
+		Queue<Node<T>> nodeList = new LinkedList<>();
+		nodeList.add(root);
+		while (true){
+			if(nodeList.isEmpty())break;
+			Node<T> theFirst = nodeList.poll();
+			if(null != theFirst){
+				System.out.print(theFirst.getData() + " => ");
+				nodeList.add(theFirst.getLeftNode());
+				nodeList.add(theFirst.getRightNode());
+			}
+		}
+
 	}
 
 	/**

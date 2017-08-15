@@ -14,7 +14,8 @@ public class BinaryTreeTest {
 		binaryTree.put(root, 2);
 		binaryTree.put(root, 3);
 		binaryTree.put(root, -9);
-		System.out.println(binaryTree);
+
+		binaryTree.print(root);
     }
 
 }
