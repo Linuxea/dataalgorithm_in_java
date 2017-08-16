@@ -149,7 +149,11 @@ public class BinaryTree<T extends Comparable> {
 		if( null == delNode.getLeftNode() && null == delNode.getRightNode()){
 			delNode = null;
 		}else if(null != delNode.getLeftNode() && null != delNode.getRightNode()){
-
+			Node<T> temp = delNode.getRightNode();
+			while(null != temp.getLeftNode()){
+				temp = temp.getLeftNode();
+			}
+			delNode = temp;
 		}else{
 			//只有一个节点的情况下
 			if(null != delNode.getLeftNode()){
