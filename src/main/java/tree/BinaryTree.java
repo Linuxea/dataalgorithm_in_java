@@ -94,7 +94,7 @@ public class BinaryTree<T extends Comparable> {
         if(root.getData().compareTo(data) > 0){
             return find(root.getLeftNode(),data);
         }else if(root.getData().compareTo(data) < 0){
-	        return  find(root.getRightNode(), data);
+	        return find(root.getRightNode(), data);
         }else{
 	        return 1;
         }
@@ -125,6 +125,42 @@ public class BinaryTree<T extends Comparable> {
         }
         return max;
     }
+
+	public Node<T> findNode(Node<T> root,T data){
+		if(null == root)return null;
+
+		if(root.getData().compareTo(data) > 0){
+			return findNode(root.getLeftNode(),data);
+		}else if(root.getData().compareTo(data) < 0){
+			return findNode(root.getRightNode(), data);
+		}else{
+			return root;
+		}
+	}
+
+	/**
+	 * 删除操作
+	 * @param root
+	 * @param key
+	 */
+	public int del(Node<T> root, T key){
+		Node<T> delNode = findNode(root, key);
+		if (null == delNode)return -1; // 找不出需要被删除的那个节点
+		if( null == delNode.getLeftNode() && null == delNode.getRightNode()){
+			delNode = null;
+		}else if(null != delNode.getLeftNode() && null != delNode.getRightNode()){
+
+		}else{
+			//只有一个节点的情况下
+			if(null != delNode.getLeftNode()){
+				delNode = delNode.getLeftNode();
+			}else{
+				delNode = delNode.getRightNode();
+			}
+		}
+
+		return 1;
+	}
 
 
 	/**
