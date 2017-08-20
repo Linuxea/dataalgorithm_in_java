@@ -14,7 +14,7 @@ public class LinkedList<T> {
             while(temp.next != null){
                 temp = temp.next;
             }
-            temp.next = new Node<>(data); //why
+            temp.next = new Node<>(data); //why 因为可变
         }
         return 1;
     }
