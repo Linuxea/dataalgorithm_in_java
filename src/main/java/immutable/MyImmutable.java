@@ -26,6 +26,10 @@ final class FakeString implements Cloneable{
 		this.values = values;
 	}
 
+	public FakeString() {
+		values = "".toCharArray();
+	}
+
 	/**
 	 * return a copy
 	 * @return
