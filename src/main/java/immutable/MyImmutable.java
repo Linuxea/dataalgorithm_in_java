@@ -34,7 +34,7 @@ final class FakeString implements Cloneable{
 	 * return a copy
 	 * @return
 	 */
-	public FakeString get(){
+	public  FakeString get(){
 		return new FakeString(this.values);
 	}
 
