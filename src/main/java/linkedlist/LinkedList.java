@@ -21,10 +21,11 @@ public class LinkedList<T> {
 
     public void print(){
         if(null == head)return ;
-        System.out.println(head.getData());
-        while(head.next != null){
-            System.out.println(head.next.getData());
-            head = head.next;
+        Node temp = head;
+        System.out.println(temp.getData());
+        while(temp.next != null){
+            System.out.println(temp.next.getData());
+			temp = temp.next;
         }
     }
 
