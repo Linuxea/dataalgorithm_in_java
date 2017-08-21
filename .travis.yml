@@ -1,5 +1,7 @@
 language: java
-script: mvn clean install
+script:
+  - mvn clean install
+  - mvn test
 notifications:
   email:
     - linuxea@foxmail.com
