@@ -35,6 +35,11 @@ public class MyHash<K,V> {
         return nodes[hash].getValue();
     }
 
+    /**
+     * 根据key值来计算hashCode
+     * @param k
+     * @return
+     */
     private int countHashCode(K k){
         if(hash != 0) return hash;
         int sum = 0;
@@ -55,7 +60,7 @@ public class MyHash<K,V> {
         final int hash;
         final K key;
         V value;
-        Node next;
+        Node next; //此处不考虑链表拓展
 
 
         public Node(int hash, K key, V value, Node next) {
