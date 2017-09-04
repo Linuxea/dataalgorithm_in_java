@@ -11,6 +11,8 @@ public class MyHashTest {
         MyHash<String, String> myHash = new MyHash<>();
         myHash.add("name","linuxea");
         System.out.println(myHash.getHash("name"));
+        System.out.println(myHash.getHash("name"));
+        System.out.println(myHash.getHash("name"));
         System.out.println(myHash.get("name"));
 
     }

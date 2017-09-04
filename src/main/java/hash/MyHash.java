@@ -1,6 +1,7 @@
 package hash;
 
 /**
+ * 实现一个基于数组的简易hash表
  * create by linuxea on 2017/9/4 11:27
  **/
 public class MyHash<K,V> {
