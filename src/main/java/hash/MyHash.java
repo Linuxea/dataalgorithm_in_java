@@ -20,7 +20,6 @@ public class MyHash<K,V> {
      * 暂不考虑hash冲突的拓展情况
      */
     public void add(K key, V value){
-        Node<K,V>[] temp = nodes;
         int hash = countHashCode(key);
         Node<K,V> newNode = new Node(hash, key, value,null);
         nodes[hash] = newNode;
