@@ -12,11 +12,10 @@ public class Bubble {
     public static void sort(int[] ints) {
 
         System.out.println("before sort :" + Arrays.toString(ints));
-
+        int temp;
         for (int i = 0; i < ints.length; i++) {
             for (int j = 0; j < ints.length - i - 1; j++) { //每次排序好的序列结果保存在最后。故为冒泡
                 if (ints[j] > ints[j + 1]) {
-                    int temp;
                     temp = ints[j];
                     ints[j] = ints[j + 1];
                     ints[j + 1] = temp;
