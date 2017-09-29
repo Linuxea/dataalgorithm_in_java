@@ -15,10 +15,12 @@ public class BST<T extends Comparable> {
         Node<Integer> root = null;
         Node<Integer> one = bst.create(root, 1);
         Node<Integer> two = bst.create(one, 2);
-        Node<Integer> three = bst.create(two, 4);
-        Node<Integer> four = bst.create(three, -8);
-        Node<Integer> five = bst.create(four, -9);
-        Node<Integer> six = bst.create(five, -7);
+        Node<Integer> three = bst.create(two, 3);
+        Node<Integer> four = bst.create(three, 4);
+        Node<Integer> five = bst.create(four, 5);
+        Node<Integer> six = bst.create(five, 6);
+        Node<Integer> seven = bst.create(six, 7);
+        bst.create(seven, 8);
 
         System.out.println("前序遍历开始");
         bst.prePrint(one);
@@ -26,6 +28,10 @@ public class BST<T extends Comparable> {
         bst.midPrint(one);
         System.out.println("\n后序遍历开始");
         bst.postPrint(one);
+
+        System.out.println("求深度");
+        int depth = bst.exploreDepth(one);
+        System.out.println("总共有深度" + depth);
 
     }
 
@@ -66,6 +72,20 @@ public class BST<T extends Comparable> {
             postPrint(node.getRight());
             System.out.print(node.getData() + "->");
         }
+    }
+
+    /**
+     * 求二叉树深度
+     *
+     * @param root
+     * @return
+     */
+    public int exploreDepth(Node<T> root) {
+        if (root == null)
+            return 0;
+        int letDepth = exploreDepth(root.left);
+        int rightDepth = exploreDepth(root.right);
+        return letDepth > rightDepth ? letDepth + 1 : rightDepth + 1;
     }
 
 }
