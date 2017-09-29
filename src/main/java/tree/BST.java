@@ -1,6 +1,9 @@
 package tree;
 
 /**
+ * 如果用递归的话每次创建时需要传递一个节点参数给它
+ * 这个应该怎么解决呢
+ * 可是递归好优美啊。。。。。
  * Created by Linuxea on 2017-09-29.
  */
 public class BST<T extends Comparable> {
