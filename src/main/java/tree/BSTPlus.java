@@ -19,6 +19,17 @@ public class BSTPlus<T extends Integer> {
         bstPlus.midPrint(bstPlus.root);
         System.out.println("\n################");
         bstPlus.postPrint(bstPlus.root);
+        System.out.println("\n################");
+        bstPlus.mirrorReverse(bstPlus.root);
+        System.out.println("递归反转二叉树后:");
+
+        System.out.println("\n################");
+        bstPlus.prePrint(bstPlus.root);
+        System.out.println("\n################");
+        bstPlus.midPrint(bstPlus.root);
+        System.out.println("\n################");
+        bstPlus.postPrint(bstPlus.root);
+        System.out.println("\n################");
     }
 
     /**
@@ -90,6 +101,26 @@ public class BSTPlus<T extends Integer> {
             postPrint(node.getRight());
             System.out.print(node.getData() + "->");
         }
+    }
+
+
+    /**
+     * 递归反转二叉树
+     *
+     * @param node
+     */
+    public void mirrorReverse(TreeNode node) {
+        if (null == node) {
+            return;
+        }
+
+        TreeNode temp = node.left;
+        node.left = node.right;
+        node.right = temp;
+
+        mirrorReverse(node.left);
+        mirrorReverse(node.right);
+
     }
 
 
