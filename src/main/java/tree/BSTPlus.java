@@ -3,6 +3,7 @@ package tree;
 import java.util.Scanner;
 
 /**
+ * 完美二叉树
  * Created by Linuxea on 2017-09-30.
  */
 public class BSTPlus<T extends Integer> {
