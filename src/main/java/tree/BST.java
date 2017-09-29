@@ -20,15 +20,13 @@ public class BST<T extends Comparable> {
         System.out.println("前序遍历开始");
         bst.prePrint(one);
         System.out.println("\n中序遍历开始");
-        System.out.println("=============");
         bst.midPrint(one);
         System.out.println("\n后序遍历开始");
-        System.out.println("=============");
         bst.postPrint(one);
 
     }
 
-    public Node create(Node<T> node, T value) {
+    public Node<T> create(Node<T> node, T value) {
         if (null == node) {
             node = new Node<>(value);
             node.setData(value);
