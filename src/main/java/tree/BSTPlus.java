@@ -21,6 +21,9 @@ public class BSTPlus<T extends Integer> {
         bstPlus.postPrint(bstPlus.root);
     }
 
+    /**
+     * 创建接口
+     */
     public void create() {
         Scanner scanner = new Scanner(System.in);
         String line;
@@ -29,6 +32,13 @@ public class BSTPlus<T extends Integer> {
         }
     }
 
+    /**
+     * 递归创建的节点
+     *
+     * @param node
+     * @param value
+     * @return
+     */
     private TreeNode<T> create(TreeNode<T> node, T value) {
         if (node == null) {
             node = new TreeNode<>(value);
@@ -46,6 +56,10 @@ public class BSTPlus<T extends Integer> {
         return node;
     }
 
+    /**
+     * 前序遍历
+     * @param node
+     */
     public void prePrint(TreeNode<T> node) {
         if (null != node) {
             System.out.print(node.getData() + "->");
@@ -54,6 +68,10 @@ public class BSTPlus<T extends Integer> {
         }
     }
 
+    /**
+     * 中序遍历
+     * @param node
+     */
     public void midPrint(TreeNode<T> node) {
         if (null != node) {
             midPrint(node.getLeft());
@@ -62,6 +80,10 @@ public class BSTPlus<T extends Integer> {
         }
     }
 
+    /**
+     * 后序遍历
+     * @param node
+     */
     public void postPrint(TreeNode<T> node) {
         if (null != node) {
             postPrint(node.getLeft());
