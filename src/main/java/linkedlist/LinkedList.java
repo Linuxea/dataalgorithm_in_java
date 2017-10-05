@@ -2,7 +2,7 @@ package linkedlist;
 /**
  * Created by Linuxea on 2017-08-21.
  */
-public class LinkedList<T> {
+public final class LinkedList<T> {
 
     Node<T> head;
 
