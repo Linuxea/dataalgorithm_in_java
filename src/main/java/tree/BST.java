@@ -87,8 +87,40 @@ public class BST<T extends Comparable> {
         int rightDepth = exploreDepth(root.right);
         return letDepth > rightDepth ? letDepth + 1 : rightDepth + 1;
     }
+   
+   
+    /**
+     * 求二叉树深度
+     * 非递归
+     * 伪代码实现
+     * 基本思路是每一行看成是多个节点组成（事实确实如此），每行遍历都将所有当前行节点遍历光，层次+1.
+     * @param root
+     * @return
+     */
+    /*
+    public int exploreDepthNotRecursive(Node<T> root){
+        if(root == null) return 0;
+        int level = 0;
+        
+        List<List<Node>> nodeList = Lists.newArrayList();
+        nodeList.add(List.newArrayList(root));
+        while(nodeList.size()>0){
+            List<Node> perColumnNode = nodeList.pop(); // pop descard
+            while(perColumnNode.pop()){
+                if(root.left()){
+                    nodeList.push(root.left());
+                }
+            
+                if(root.right()){
+                    nodeList.push(root.right());
+                }
+            }
+                  
+            level++;
+    }
 
 }
+    */
 
 
 class Node<T extends Comparable> {
