@@ -1,4 +1,4 @@
-package sort;
+package datastructure.sort;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -11,7 +11,7 @@ public class Bubble {
 
     public static void sort(int[] ints) {
 
-        System.out.println("before sort :" + Arrays.toString(ints));
+        System.out.println("before datastructure.sort :" + Arrays.toString(ints));
         int temp;
         for (int i = 0; i < ints.length; i++) {
             for (int j = 0; j < ints.length - i - 1; j++) { //每次排序好的序列结果保存在最后。故为冒泡
@@ -23,7 +23,7 @@ public class Bubble {
             }
         }
 
-        System.out.println("after sort :" + Arrays.toString(ints));
+        System.out.println("after datastructure.sort :" + Arrays.toString(ints));
 
     }
 

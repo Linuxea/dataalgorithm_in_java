@@ -1,9 +1,9 @@
-package recursive;
+package datastructure.recursive;
 
 import java.util.Scanner;
 
 /**
- * use recursive
+ * use datastructure.recursive
  * Created by Linuxea on 17-10-7.
  */
 public class Print {

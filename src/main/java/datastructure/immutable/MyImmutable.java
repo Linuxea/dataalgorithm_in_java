@@ -1,4 +1,4 @@
-package immutable;
+package datastructure.immutable;
 
 import java.util.Arrays;
 

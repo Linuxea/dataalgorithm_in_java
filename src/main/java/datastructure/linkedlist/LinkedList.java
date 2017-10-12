@@ -1,4 +1,4 @@
-package linkedlist;
+package datastructure.linkedlist;
 /**
  * Created by Linuxea on 2017-08-21.
  */

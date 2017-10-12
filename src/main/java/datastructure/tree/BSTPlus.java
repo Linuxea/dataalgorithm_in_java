@@ -1,4 +1,4 @@
-package tree;
+package datastructure.tree;
 
 import java.util.Scanner;
 

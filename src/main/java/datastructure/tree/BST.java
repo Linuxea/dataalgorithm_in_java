@@ -1,4 +1,4 @@
-package tree;
+package datastructure.tree;
 
 /**
  * 如果用递归的话每次创建时需要传递一个节点参数给它

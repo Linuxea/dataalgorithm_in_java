@@ -1,4 +1,4 @@
-package hash;
+package datastructure.hash;
 
 /**
  * 实现一个基于数组的简易hash表
