@@ -1,4 +1,4 @@
-package tree;
+package datastructure.tree;
 
 /**
  * Created by Linuxea on 2017/8/16.

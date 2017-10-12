@@ -1,8 +1,6 @@
-package hash;
+package datastructure.hash;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class MyHashTest {
 
