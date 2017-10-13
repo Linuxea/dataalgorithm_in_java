@@ -30,6 +30,8 @@ public class BSTPlus<T extends Integer> {
         System.out.println("\n################");
         bstPlus.postPrint(bstPlus.root);
         System.out.println("\n################");
+        
+        System.out.println("The depth of three is:" + bstPlus.explore(bstPlus.root));
     }
 
     /**
@@ -121,6 +123,23 @@ public class BSTPlus<T extends Integer> {
         mirrorReverse(node.left);
         mirrorReverse(node.right);
 
+    }
+    
+    /**
+     * 递归求解二叉树深度
+     * @param root
+     * @return
+     */
+    public int explore(TreeNode<T> root){
+    	
+    	if(null == root)
+    		return 0;
+    	
+    	int leftDepth = explore(root.getLeft());
+    	int rightDepth = explore(root.getRight());
+    	
+    	return leftDepth > rightDepth ? leftDepth + 1: rightDepth + 1;
+    	
     }
 
 
