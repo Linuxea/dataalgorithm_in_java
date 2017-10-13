@@ -1,6 +1,8 @@
 package datastructure.tree;
 
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Scanner;
 
 import com.google.common.collect.Lists;
@@ -23,6 +25,9 @@ public class BSTPlus<T extends Comparable<T>> {
         System.out.println("\n################");
         bstPlus.postPrint(bstPlus.root);
         System.out.println("\n################");
+        bstPlus.levelPrint(bstPlus.root);
+        System.out.println("\n################");
+        
         bstPlus.mirrorReverse(bstPlus.root);
         System.out.println("递归反转二叉树后:");
 
@@ -75,6 +80,35 @@ public class BSTPlus<T extends Comparable<T>> {
         }
 
         return node;
+    }
+    
+    /**
+     * 层次遍历
+     * @param node
+     */
+    public void levelPrint(TreeNode<T> node){
+    	
+    	System.out.print("水平遍历开始");
+    	
+    	if(null == node)return;
+    	
+    	Queue<TreeNode<?>> queue = new LinkedList<>();
+    	
+    	queue.add(node);
+    	
+    	while(queue.isEmpty() == false){
+    		TreeNode<?> temp = queue.poll();
+    		System.out.print(temp.getData() + "->");
+    		if(temp.left != null){
+    			queue.add(temp.left);
+    		}
+    		
+    		if(temp.right != null){
+    			queue.add(temp.right);
+    		}
+    	}
+    	
+    	System.out.println();
     }
 
     /**
@@ -159,6 +193,8 @@ public class BSTPlus<T extends Comparable<T>> {
      * @return
      */
     public int exploreDepthWithOutRecursive(TreeNode<T> root){
+    	
+    	if( null ==  root ) return 0;
     	
     	List<TreeNode<T>> nodes = Lists.newArrayList();
     	nodes.add(root);
