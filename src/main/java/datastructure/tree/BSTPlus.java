@@ -6,7 +6,7 @@ import java.util.Scanner;
  * 完美二叉树
  * Created by Linuxea on 2017-09-30.
  */
-public class BSTPlus<T extends Integer> {
+public class BSTPlus<T extends Comparable<T>> {
 
     private TreeNode<T> root; // root node
 
@@ -31,18 +31,21 @@ public class BSTPlus<T extends Integer> {
         bstPlus.postPrint(bstPlus.root);
         System.out.println("\n################");
         
-        System.out.println("The depth of three is:" + bstPlus.explore(bstPlus.root));
+        System.out.println("The depth of three is:" + bstPlus.exploreDepth(bstPlus.root));
     }
 
     /**
      * 创建接口
      */
-    public void create() {
+    @SuppressWarnings("unchecked")
+	public void create() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("请输入整数!");
         String line;
         while (null != (line = scanner.nextLine()) && !line.equalsIgnoreCase("exit")) {
             root = create(root, (T) Integer.valueOf(line));
         }
+        scanner.close();
     }
 
     /**
@@ -111,12 +114,12 @@ public class BSTPlus<T extends Integer> {
      *
      * @param node
      */
-    public void mirrorReverse(TreeNode node) {
+    public void mirrorReverse(TreeNode<T> node) {
         if (null == node) {
             return;
         }
 
-        TreeNode temp = node.left;
+        TreeNode<T> temp = node.left;
         node.left = node.right;
         node.right = temp;
 
@@ -130,13 +133,13 @@ public class BSTPlus<T extends Integer> {
      * @param root
      * @return
      */
-    public int explore(TreeNode<T> root){
+    public int exploreDepth(TreeNode<T> root){
     	
     	if(null == root)
     		return 0;
     	
-    	int leftDepth = explore(root.getLeft());
-    	int rightDepth = explore(root.getRight());
+    	int leftDepth  = exploreDepth(root.getLeft());
+    	int rightDepth = exploreDepth(root.getRight());
     	
     	return leftDepth > rightDepth ? leftDepth + 1: rightDepth + 1;
     	
