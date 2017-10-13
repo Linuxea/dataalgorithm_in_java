@@ -1,6 +1,9 @@
 package datastructure.tree;
 
+import java.util.List;
 import java.util.Scanner;
+
+import com.google.common.collect.Lists;
 
 /**
  * 完美二叉树
@@ -31,7 +34,9 @@ public class BSTPlus<T extends Comparable<T>> {
         bstPlus.postPrint(bstPlus.root);
         System.out.println("\n################");
         
-        System.out.println("The depth of three is:" + bstPlus.exploreDepth(bstPlus.root));
+        System.out.println("递归遍历二叉树深度:" + bstPlus.exploreDepth(bstPlus.root));
+        
+        System.out.println("非递归遍历二叉树深度: " + bstPlus.exploreDepthWithOutRecursive(bstPlus.root));
     }
 
     /**
@@ -40,7 +45,7 @@ public class BSTPlus<T extends Comparable<T>> {
     @SuppressWarnings("unchecked")
 	public void create() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("请输入整数!");
+        System.out.println("请输入整数!以 exit 为结束 ");
         String line;
         while (null != (line = scanner.nextLine()) && !line.equalsIgnoreCase("exit")) {
             root = create(root, (T) Integer.valueOf(line));
@@ -144,6 +149,45 @@ public class BSTPlus<T extends Comparable<T>> {
     	return leftDepth > rightDepth ? leftDepth + 1: rightDepth + 1;
     	
     }
+    
+    /**
+     * 非递归求解二叉树深度
+     * 
+     * 将节点划分为层次的思想
+     * 
+     * @param root
+     * @return
+     */
+    public int exploreDepthWithOutRecursive(TreeNode<T> root){
+    	
+    	List<TreeNode<T>> nodes = Lists.newArrayList();
+    	nodes.add(root);
+    	
+    	int level = 0;
+    	
+    	while(nodes.isEmpty()  == false ){
+    		
+    		List<TreeNode<T>> nodesCopy = Lists.newArrayList(nodes);
+
+    		nodes.clear();
+    		
+    		for(TreeNode<T> temp: nodesCopy){
+    			if(temp.left != null){
+    				nodes.add(temp.left);
+    			}
+    			if(temp.right != null){
+    				nodes.add(temp.right);
+    			}
+    		}
+    		
+    		level++ ;
+    		
+    	}
+    	
+		return level;
+    	
+    }
+    
 
 
 }
