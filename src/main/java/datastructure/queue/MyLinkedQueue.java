@@ -21,6 +21,7 @@ public class MyLinkedQueue<T extends Comparable<T>> {
 		if (null == head) {
 			head = newNode;
 		}
+		// TODO
 		tail = newNode;
 		size++;
 	}
@@ -52,14 +53,25 @@ public class MyLinkedQueue<T extends Comparable<T>> {
 	}
 	
 	
-	public int first() {
-		//TODO
-		return 1;
+	public T first() {
+		if (null == head) {
+			return null;
+		}
+		T t = head.data;
+		if (head.next != null) {
+			head = head.next;
+		}
+		
+		return t;
 	}
 	
-	public int last() {
-		//TODO
-		return 1;
+	public T last() {
+		if (null == head || null == tail) {
+			return null;
+		}
+		T t = tail.data;
+		
+		return t;
 	}
 	
 	
