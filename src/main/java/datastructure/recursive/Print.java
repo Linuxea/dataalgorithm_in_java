@@ -8,19 +8,19 @@ import java.util.Scanner;
  */
 public class Print {
 
-    private Scanner scanner = new Scanner(System.in);
+	private Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        Print print = new Print();
-        print.print();
-    }
+	public static void main(String[] args) {
+		Print print = new Print();
+		print.print();
+	}
 
-    public void print() {
-        String line = scanner.nextLine();
-        if (!"exit".equalsIgnoreCase(line)) {
-            print();
-        }
-        System.out.println(line);
-    }
+	public void print() {
+		String line = scanner.nextLine();
+		if (!"exit".equalsIgnoreCase(line)) {
+			print();
+		}
+		System.out.println(line);
+	}
 
 }

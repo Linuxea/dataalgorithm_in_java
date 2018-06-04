@@ -11,51 +11,51 @@ import java.util.List;
  **/
 public class MyTrie<T> {
 
-    private Node<T> root;
+	private Node<T> root;
 
-    public void add(T t) {
-        Node<T> temp = root;
-        if (null == temp) {
-            Node realRoot = new Node(t, null);
-            root = realRoot;
-            return;
-        }
+	public void add(T t) {
+		Node<T> temp = root;
+		if (null == temp) {
+			Node realRoot = new Node(t, null);
+			root = realRoot;
+			return;
+		}
 
-        //从 root 开始遍历
-        List<T> list = root.getNext();
-        if (list.contains(t)) {
+		//从 root 开始遍历
+		List<T> list = root.getNext();
+		if (list.contains(t)) {
 
-        }
+		}
 
-    }
+	}
 
 
-    private static class Node<T> {
-        boolean isWord = false; // default
-        T t;
-        List<T> next = Lists.newArrayList();
+	private static class Node<T> {
+		boolean isWord = false; // default
+		T t;
+		List<T> next = Lists.newArrayList();
 
-        public Node(T t, List<T> next) {
-            this.t = t;
-            this.next = next;
-        }
+		public Node(T t, List<T> next) {
+			this.t = t;
+			this.next = next;
+		}
 
-        public T getT() {
-            return t;
-        }
+		public T getT() {
+			return t;
+		}
 
-        public void setT(T t) {
-            this.t = t;
-        }
+		public void setT(T t) {
+			this.t = t;
+		}
 
-        public List<T> getNext() {
-            return next;
-        }
+		public List<T> getNext() {
+			return next;
+		}
 
-        public void setNext(List<T> next) {
-            this.next = next;
-        }
-    }
+		public void setNext(List<T> next) {
+			this.next = next;
+		}
+	}
 
 
 }

@@ -9,11 +9,11 @@ import org.junit.Test;
 public class BinaryTreeTest {
 
 	BinaryTree<Integer> binaryTree = new BinaryTree<>();
-	BinaryTree. Node root = binaryTree.put(null, 1);
+	BinaryTree.Node root = binaryTree.put(null, 1);
 
 	@Before
-	public void before(){
-        binaryTree.put(root,101);
+	public void before() {
+		binaryTree.put(root, 101);
 		binaryTree.put(root, 2);
 		binaryTree.put(root, 3);
 		binaryTree.put(root, -9);
@@ -26,42 +26,42 @@ public class BinaryTreeTest {
 		System.out.println("\n水平遍历结束");
 	}
 
-    @Test
-    public void prePrintTest(){
+	@Test
+	public void prePrintTest() {
 		System.out.println("先序遍历开始");
 		binaryTree.prePrint(root);
 		System.out.println("\n先序遍历结束");
-    }
+	}
 
 	@Test
-	public void middlePrintTest(){
+	public void middlePrintTest() {
 		System.out.println("中序遍历开始");
 		binaryTree.middlePrint(root);
 		System.out.println("\n中序遍历结束");
 	}
 
 	@Test
-	public void afterPrintTest(){
+	public void afterPrintTest() {
 		System.out.println("后序遍历开始");
 		binaryTree.afterPrint(root);
 		System.out.println("\n后序遍历结束");
 	}
 
 	@Test
-	public void findTest(){
-        int result = binaryTree.find(root, -9);
-        System.out.println(result);
-    }
+	public void findTest() {
+		int result = binaryTree.find(root, -9);
+		System.out.println(result);
+	}
 
-    @Test
-    public void findMaxTest(){
-	    int max = binaryTree.findMax(root);
-	    System.out.println("max:"+ max);
-    }
+	@Test
+	public void findMaxTest() {
+		int max = binaryTree.findMax(root);
+		System.out.println("max:" + max);
+	}
 
-    @Test
-    public void findMinTest(){
-        int min = binaryTree.findMin(root);
-        System.out.println("min:"+ min);
-    }
+	@Test
+	public void findMinTest() {
+		int min = binaryTree.findMin(root);
+		System.out.println("min:" + min);
+	}
 }

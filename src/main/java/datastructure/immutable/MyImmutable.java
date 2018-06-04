@@ -9,8 +9,8 @@ import java.util.Arrays;
 public class MyImmutable {
 
 
-	public static void main(String[] argc){
-		char[] values = {'a','b','c','d'};
+	public static void main(String[] argc) {
+		char[] values = {'a', 'b', 'c', 'd'};
 		FakeString fakeString = new FakeString(values);
 		System.out.println(fakeString);
 		FakeString fakeString1 = fakeString.get();
@@ -19,7 +19,7 @@ public class MyImmutable {
 
 }
 
-final class FakeString implements Cloneable{
+final class FakeString implements Cloneable {
 	private final char[] values;
 
 	public FakeString(char[] values) {
@@ -32,9 +32,10 @@ final class FakeString implements Cloneable{
 
 	/**
 	 * return a copy
+	 *
 	 * @return
 	 */
-	public final FakeString get(){
+	public final FakeString get() {
 		return new FakeString(this.values);
 	}
 

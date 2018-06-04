@@ -8,7 +8,7 @@ import org.junit.Test;
 public class StringTest {
 
 	@Test
-	public void test(){
+	public void test() {
 		String string = "magic String";
 		String string2 = string;
 		string2 = "copy magic String";
